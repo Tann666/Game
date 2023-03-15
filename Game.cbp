@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Game_Map.cpp" />
+		<Unit filename="Game_Map.h" />
+		<Unit filename="SDL_utility.cpp" />
+		<Unit filename="SDL_utility.h" />
+		<Unit filename="Texture_object.cpp" />
+		<Unit filename="Texture_object.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
