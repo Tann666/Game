@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1678859499 source:d:\uet\ltnc\game_sdl2\game\main.cpp
+1678952392 source:d:\uet\ltnc\game_sdl2\game\main.cpp
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
@@ -12,16 +12,16 @@
 1678792319 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
 	"SDL_utility.h"
 
-1678793514 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
+1678868628 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
 	"Texture_object.h"
 
 1678792192 d:\uet\ltnc\game_sdl2\game\texture_object.h
 	"SDL_utility.h"
 
-1678859499 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
+1678868628 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
 	<fstream>
 	"Game_Map.h"
 
-1678859499 d:\uet\ltnc\game_sdl2\game\game_map.h
+1678868451 d:\uet\ltnc\game_sdl2\game\game_map.h
 	"Texture_object.h"
 

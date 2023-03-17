@@ -14,18 +14,15 @@ int main(int argc, char* argv[])
     SDL_RenderClear(renderer);
 
     TextureObject *background = new TextureObject();
-    background->load_texture("img/3.png",renderer);
+    background->load_texture("img/background.png",renderer);
     background->Set_dstRect(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
     background->RenderTexture(renderer);
-    Game_map map_;
-    //test
-    map_.load_Map("img/map1.txt");
-    for (int i=0;i<14;i++){
-        for (int j=0;j<24;j++){
-            cout<<map_.MapIndex[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+
+    Game_map *map_ = new Game_map();
+    map_->load_Map("img/map1.txt");
+    map_->import_TileSet("img/set.png",renderer);
+    map_->show_map(renderer);
+
     SDL_RenderPresent(renderer);
     bool is_quit = false;
     while (!is_quit)

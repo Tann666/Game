@@ -19,7 +19,7 @@ void TextureObject::load_texture(const string &file_name,SDL_Renderer *renderer)
     }
     else logSDLError(cout,"IMG_load",true);
     texture_ = texture;
-    SDL_QueryTexture(texture,NULL,NULL,&srcrect.w,&srcrect.h);
+    SDL_QueryTexture(texture_,NULL,NULL,&srcrect.w,&srcrect.h);
 }
 void TextureObject::Set_dstRect(const int &x, const int &y, const int &w, const int &h)
 {

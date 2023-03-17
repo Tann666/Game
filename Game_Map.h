@@ -9,7 +9,7 @@ struct Game_map
 {
 
     int MapIndex[14][24];
-    TextureObject *tileset[6];
+    TextureObject tileset[6];
     Game_map();
     void load_Map(const string &file);
     void import_TileSet(const string &file, SDL_Renderer *renderer);
