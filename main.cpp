@@ -1,6 +1,7 @@
 #include "SDL_utility.h"
 #include "Texture_object.h"
 #include "Game_Map.h"
+#include "Character.h"
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -22,6 +23,10 @@ int main(int argc, char* argv[])
     map_->load_Map("img/map1.txt");
     map_->import_TileSet("img/set.png",renderer);
     map_->show_map(renderer);
+
+    Character *koala = new Character();
+    koala->load_frame(renderer);
+    koala->render_frame(renderer);
 
     SDL_RenderPresent(renderer);
     bool is_quit = false;
