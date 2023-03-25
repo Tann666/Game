@@ -18,9 +18,9 @@ void Game_map::load_Map(const string &file){
     file_.close();
 }
 void Game_map::import_TileSet(const string &file, SDL_Renderer *renderer){
-    for (int i=0;i<6;i++){
+    for (int i=0;i<8;i++){
         tileset[i].load_texture(file,renderer);
-        tileset[i].srcrect.w /=6;
+        tileset[i].srcrect.w /=8;
         tileset[i].srcrect.x = i*tileset[i].srcrect.w;
         tileset[i].srcrect.y = 0;
 

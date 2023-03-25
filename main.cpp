@@ -17,18 +17,16 @@ int main(int argc, char* argv[])
     TextureObject *background = new TextureObject();
     background->load_texture("img/background.png",renderer);
     background->Set_dstRect(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
-    background->RenderTexture(renderer);
+
 
     Game_map *map_ = new Game_map();
-    map_->load_Map("img/map1.txt");
+    map_->load_Map("img/map2.txt");
     map_->import_TileSet("img/set.png",renderer);
-    map_->show_map(renderer);
 
     Character *koala = new Character();
     koala->load_frame(renderer);
-    koala->render_frame(renderer);
 
-    SDL_RenderPresent(renderer);
+
     bool is_quit = false;
     while (!is_quit)
     {
@@ -39,7 +37,17 @@ int main(int argc, char* argv[])
                 is_quit= true;
                 break;
             }
+            koala->control(e);
         }
+        SDL_RenderClear(renderer);
+        background->RenderTexture(renderer);
+        map_->show_map(renderer);
+        koala->restart(map_->tileset[1].dstrect);
+        koala->update_control();
+        koala->render_frame(renderer);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(100);
+
     }
     background->Clean_Object();
     background = NULL;
