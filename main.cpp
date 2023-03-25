@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     SDL_RenderClear(renderer);
 
     TextureObject *background = new TextureObject();
-    background->load_texture("img/background.png",renderer);
+    background->load_texture("img/background2.png",renderer);
     background->Set_dstRect(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
 
 
@@ -25,7 +25,8 @@ int main(int argc, char* argv[])
 
     Character *koala = new Character();
     koala->load_frame(renderer);
-
+    map_->show_map(renderer);
+    koala->restart(map_->tileset[1].dstrect);
 
     bool is_quit = false;
     while (!is_quit)
@@ -42,11 +43,10 @@ int main(int argc, char* argv[])
         SDL_RenderClear(renderer);
         background->RenderTexture(renderer);
         map_->show_map(renderer);
-        koala->restart(map_->tileset[1].dstrect);
-        koala->update_control();
+        koala->update_control(map_);
         koala->render_frame(renderer);
         SDL_RenderPresent(renderer);
-        SDL_Delay(100);
+        SDL_Delay(50);
 
     }
     background->Clean_Object();

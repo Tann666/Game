@@ -36,8 +36,10 @@ struct Character
     Character();
     void load_frame(SDL_Renderer *renderer);
     void control(SDL_Event e);
-    void update_control();
-    bool check_collision();
+    void update_control(Game_map *map_);
+    bool valid_collision(const int &index);
+    void check_collision_hor(Game_map *map_);
+    void check_collision_ver(Game_map *map_);
     void render_frame(SDL_Renderer *renderer);
     void restart(const SDL_Rect &start_rect);
 
