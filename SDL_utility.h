@@ -11,8 +11,7 @@ const int SCREEN_WIDTH = 1200;
 const int SCREEN_HEIGHT = 700;
 const string WINDOW_TITLE = "Koala Runaway";
 
-void logSDLError(ostream& os,
-                 const string &msg, bool fatal = false);
+void logSDLError(ostream& os, const string &msg, bool fatal = false);
 void initSDL(SDL_Window* &window, SDL_Renderer* &renderer);
 void quitSDL(SDL_Window* window, SDL_Renderer* renderer);
 

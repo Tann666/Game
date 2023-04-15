@@ -1,35 +1,55 @@
 # depslib dependency file v1.0
-1679767588 source:d:\uet\ltnc\game_sdl2\game\main.cpp
+1681217358 source:d:\uet\ltnc\game_sdl2\game\main.cpp
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
 	"Character.h"
+	<fstream>
+	<vector>
 
-1678856178 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
+1681366940 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 
-1679759130 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
+1681206740 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
 	"SDL_utility.h"
 
-1679759130 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
+1680591926 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
 	"Texture_object.h"
 
-1678792192 d:\uet\ltnc\game_sdl2\game\texture_object.h
+1680591926 d:\uet\ltnc\game_sdl2\game\texture_object.h
 	"SDL_utility.h"
 
-1679759130 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
+1681217358 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
 	<fstream>
 	"Game_Map.h"
 
-1679759130 d:\uet\ltnc\game_sdl2\game\game_map.h
+1680591926 d:\uet\ltnc\game_sdl2\game\game_map.h
 	"Texture_object.h"
 
-1679759130 source:d:\uet\ltnc\game_sdl2\game\character.cpp
+1681559194 source:d:\uet\ltnc\game_sdl2\game\character.cpp
 	"Character.h"
 
-1679759130 d:\uet\ltnc\game_sdl2\game\character.h
+1681559187 d:\uet\ltnc\game_sdl2\game\character.h
+	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
+
+1681530519 source:d:\uet\ltnc\game_sdl2\game\enemy.cpp
+	"Enemy.h"
+
+1681217358 d:\uet\ltnc\game_sdl2\game\main.cpp
+	"SDL_utility.h"
+	"Texture_object.h"
+	"Game_Map.h"
+	"Character.h"
+	<fstream>
+	<vector>
+
+1681531071 d:\uet\ltnc\game_sdl2\game\enemy.h
+	"SDL_utility.h"
+	"Texture_object.h"
+	"Game_Map.h"
+	"Character.h"
 

@@ -2,8 +2,7 @@
 
 using namespace std;
 
-void logSDLError(ostream& os,
-                 const string &msg, bool fatal)
+void logSDLError(ostream& os, const string &msg, bool fatal)
 {
     os << msg << " Error: " << SDL_GetError() << endl;
     if (fatal)
@@ -36,3 +35,4 @@ void quitSDL(SDL_Window* window, SDL_Renderer* renderer)
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
+
