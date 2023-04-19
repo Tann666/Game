@@ -22,13 +22,12 @@ struct status
 };
 struct Character
 {
-    SDL_Window *gwindow;
-    SDL_Renderer *renderer;
-    TextureObject char_frame[7];
+    TextureObject char_frame[6];
     // mỗi một trạng thái chuyển động sẽ tương ứng với 1 char_frame[i]
     int frame;
     int mPos_x, mPos_y;
     int x_vel, y_vel;
+    bool is_dead;
     status status_before;
     status c_status;
     Character();
@@ -46,5 +45,6 @@ struct Character
     void render_frame(SDL_Renderer *renderer);
     void restart(const SDL_Rect &start_rect);
     bool end_level(const SDL_Rect &end_rect);
+    void dead_status();
 };
 #endif // CHARACTER_H_INCLUDED

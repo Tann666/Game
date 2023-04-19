@@ -47,6 +47,25 @@ void Game_map::show_map(SDL_Renderer *renderer)
                 tileset[index-1].Set_dstRect(j*SIZE_TILE, i*SIZE_TILE);
                 tileset[index-1].RenderTexture(renderer);
             }
+            else if (index < 0)
+            {
+                SDL_Rect enemy_;
+                enemy_.x = j*SIZE_TILE;
+                enemy_.y = i*SIZE_TILE;
+                bool add_ene = true;
+                for (size_t k = 0; k < enemy_pos.size(); k++){
+                    if (enemy_.x == enemy_pos[k].x && enemy_.y == enemy_pos[k].y){
+                        add_ene = false;
+                        break;
+                    }
+                }
+                if (add_ene)
+                {
+                    if (index == -1) ene_direction.push_back(1);
+                    if (index == -2) ene_direction.push_back(2);
+                    enemy_pos.push_back(enemy_);
+                }
+            }
         }
     }
 }
