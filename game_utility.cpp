@@ -43,7 +43,7 @@ void Game_util::update_event(SDL_Event event, bool &is_quit, int &level, bool &s
             if (mouseX >= but_tutorial.dstrect.x && mouseX <= but_tutorial.dstrect.x + but_tutorial.dstrect.w
                 && mouseY >= but_tutorial.dstrect.y && mouseY <= but_tutorial.dstrect.y + but_tutorial.dstrect.h){
                     if (tutorial.dstrect.w == 0)//nếu đang tắt tutor
-                    tutorial.Set_dstRect(SCREEN_WIDTH / 2 - 100, (SCREEN_HEIGHT - 900) / 2, 600, 900);
+                    tutorial.Set_dstRect(SCREEN_WIDTH / 2 - 150, (SCREEN_HEIGHT - 450) / 2, 675, 450);
                     else // nếu đang bật
                     tutorial.Set_dstRect(0, 0, 0, 0);
                 }
@@ -53,6 +53,7 @@ void Game_util::update_event(SDL_Event event, bool &is_quit, int &level, bool &s
                 }
             else if (mouseX >= but_newgame.dstrect.x && mouseX <= but_newgame.dstrect.x + but_newgame.dstrect.w
                 && mouseY >= but_newgame.dstrect.y && mouseY <= but_newgame.dstrect.y + but_newgame.dstrect.h){
+                tutorial.Set_dstRect(0, 0, 0, 0);
                 start = false;
                 level = 1;
                 is_close_util = true;
@@ -62,12 +63,15 @@ void Game_util::update_event(SDL_Event event, bool &is_quit, int &level, bool &s
                 }
             else if (mouseX >= but_continue.dstrect.x && mouseX <= but_continue.dstrect.x + but_continue.dstrect.w
                 && mouseY >= but_continue.dstrect.y && mouseY <= but_continue.dstrect.y + but_continue.dstrect.h){
-                if (can_continue)
-                is_close_util = true;
+                if (can_continue){
+                    is_close_util = true;
+                    tutorial.Set_dstRect(0, 0, 0, 0);
+                }
                 }
             else if (mouseX >= but_restart.dstrect.x && mouseX <= but_restart.dstrect.x + but_restart.dstrect.w
                 && mouseY >= but_restart.dstrect.y && mouseY <= but_restart.dstrect.y + but_restart.dstrect.h){
                 if (level <= max_level){
+                    tutorial.Set_dstRect(0, 0, 0, 0);
                     start = false;
                     is_close_util = true;
                     y_fall = -SCREEN_HEIGHT;

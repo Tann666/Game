@@ -1,42 +1,40 @@
 # depslib dependency file v1.0
-1681217358 source:d:\uet\ltnc\game_sdl2\game\main.cpp
-	"SDL_utility.h"
-	"Texture_object.h"
-	"Game_Map.h"
-	"Character.h"
-	<fstream>
-	<vector>
+1682577883 source:d:\uet\ltnc\game_sdl2\game\main.cpp
+	"koala.h"
 
-1681366940 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
+1682577883 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
 	<iostream>
+	<string>
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
 
-1681206740 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
+1682577883 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
 	"SDL_utility.h"
 
-1680591926 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
+1682577883 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
 	"Texture_object.h"
 
-1680591926 d:\uet\ltnc\game_sdl2\game\texture_object.h
+1682577883 d:\uet\ltnc\game_sdl2\game\texture_object.h
 	"SDL_utility.h"
 
-1681217358 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
+1682577883 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
 	<fstream>
 	"Game_Map.h"
 
-1680591926 d:\uet\ltnc\game_sdl2\game\game_map.h
+1682577883 d:\uet\ltnc\game_sdl2\game\game_map.h
 	"Texture_object.h"
+	<vector>
 
-1681559194 source:d:\uet\ltnc\game_sdl2\game\character.cpp
+1682577883 source:d:\uet\ltnc\game_sdl2\game\character.cpp
 	"Character.h"
 
-1681559187 d:\uet\ltnc\game_sdl2\game\character.h
+1682577883 d:\uet\ltnc\game_sdl2\game\character.h
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
 
-1681530519 source:d:\uet\ltnc\game_sdl2\game\enemy.cpp
+1682577883 source:d:\uet\ltnc\game_sdl2\game\enemy.cpp
 	"Enemy.h"
 
 1681217358 d:\uet\ltnc\game_sdl2\game\main.cpp
@@ -47,11 +45,9 @@
 	<fstream>
 	<vector>
 
-1681531071 d:\uet\ltnc\game_sdl2\game\enemy.h
-	"SDL_utility.h"
+1682577883 d:\uet\ltnc\game_sdl2\game\enemy.h
 	"Texture_object.h"
 	"Game_Map.h"
-	"Character.h"
 
 1682567388 source:c:\users\huyho\onedrive\desktop\game-main\character.cpp
 	"Character.h"
@@ -123,4 +119,28 @@
 1682483799 c:\users\huyho\onedrive\desktop\game-main\star.h
 	"Texture_object.h"
 	"Game_Map.h"
+
+1682590320 source:d:\uet\ltnc\game_sdl2\game\game_utility.cpp
+	"game_utility.h"
+
+1682577883 d:\uet\ltnc\game_sdl2\game\game_utility.h
+	"Texture_object.h"
+
+1682577883 d:\uet\ltnc\game_sdl2\game\koala.h
+	"SDL_utility.h"
+	"Texture_object.h"
+	"Game_Map.h"
+	"Character.h"
+	<fstream>
+	<vector>
+	"Enemy.h"
+	"star.h"
+	"game_utility.h"
+
+1682577883 d:\uet\ltnc\game_sdl2\game\star.h
+	"Texture_object.h"
+	"Game_Map.h"
+
+1682577883 source:d:\uet\ltnc\game_sdl2\game\star.cpp
+	"star.h"
 
