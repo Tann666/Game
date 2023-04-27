@@ -28,8 +28,10 @@ struct Character
     int mPos_x, mPos_y;
     int x_vel, y_vel;
     bool is_dead;
+    bool is_win;
     status status_before;
     status c_status;
+
     Character();
     void load_frame(SDL_Renderer *renderer);
     void move_right();
@@ -45,6 +47,6 @@ struct Character
     void render_frame(SDL_Renderer *renderer);
     void restart(const SDL_Rect &start_rect);
     bool end_level(const SDL_Rect &end_rect);
-    void dead_status();
+    void end_status();
 };
 #endif // CHARACTER_H_INCLUDED

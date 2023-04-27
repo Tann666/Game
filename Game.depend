@@ -1,45 +1,42 @@
 # depslib dependency file v1.0
-1681827916 source:d:\uet\ltnc\game_sdl2\game\main.cpp
+1681217358 source:d:\uet\ltnc\game_sdl2\game\main.cpp
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
 	"Character.h"
 	<fstream>
 	<vector>
-	"Enemy.h"
-	"game_utility.h"
 
-1681827916 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
+1681366940 d:\uet\ltnc\game_sdl2\game\sdl_utility.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 
-1681827916 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
+1681206740 source:d:\uet\ltnc\game_sdl2\game\sdl_utility.cpp
 	"SDL_utility.h"
 
-1681827916 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
+1680591926 source:d:\uet\ltnc\game_sdl2\game\texture_object.cpp
 	"Texture_object.h"
 
-1681827916 d:\uet\ltnc\game_sdl2\game\texture_object.h
+1680591926 d:\uet\ltnc\game_sdl2\game\texture_object.h
 	"SDL_utility.h"
 
-1681827916 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
+1681217358 source:d:\uet\ltnc\game_sdl2\game\game_map.cpp
 	<fstream>
 	"Game_Map.h"
 
-1681827916 d:\uet\ltnc\game_sdl2\game\game_map.h
+1680591926 d:\uet\ltnc\game_sdl2\game\game_map.h
 	"Texture_object.h"
-	<vector>
 
-1681834812 source:d:\uet\ltnc\game_sdl2\game\character.cpp
+1681559194 source:d:\uet\ltnc\game_sdl2\game\character.cpp
 	"Character.h"
 
-1681827916 d:\uet\ltnc\game_sdl2\game\character.h
+1681559187 d:\uet\ltnc\game_sdl2\game\character.h
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
 
-1681828040 source:d:\uet\ltnc\game_sdl2\game\enemy.cpp
+1681530519 source:d:\uet\ltnc\game_sdl2\game\enemy.cpp
 	"Enemy.h"
 
 1681217358 d:\uet\ltnc\game_sdl2\game\main.cpp
@@ -50,54 +47,51 @@
 	<fstream>
 	<vector>
 
-1681827916 d:\uet\ltnc\game_sdl2\game\enemy.h
+1681531071 d:\uet\ltnc\game_sdl2\game\enemy.h
+	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
-
-1681640491 source:c:\users\huyho\onedrive\desktop\game-main\character.cpp
 	"Character.h"
 
-1681632055 c:\users\huyho\onedrive\desktop\game-main\character.h
+1682567388 source:c:\users\huyho\onedrive\desktop\game-main\character.cpp
+	"Character.h"
+
+1682444868 c:\users\huyho\onedrive\desktop\game-main\character.h
 	"SDL_utility.h"
 	"Texture_object.h"
 	"Game_Map.h"
 
-1681566057 c:\users\huyho\onedrive\desktop\game-main\sdl_utility.h
+1682529569 c:\users\huyho\onedrive\desktop\game-main\sdl_utility.h
 	<iostream>
+	<string>
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
 
 1681566057 c:\users\huyho\onedrive\desktop\game-main\texture_object.h
 	"SDL_utility.h"
 
-1681626993 c:\users\huyho\onedrive\desktop\game-main\game_map.h
+1682447421 c:\users\huyho\onedrive\desktop\game-main\game_map.h
 	"Texture_object.h"
 	<vector>
 
-1681626993 source:c:\users\huyho\onedrive\desktop\game-main\game_map.cpp
+1682565961 source:c:\users\huyho\onedrive\desktop\game-main\game_map.cpp
 	<fstream>
 	"Game_Map.h"
 
-1681566057 source:c:\users\huyho\onedrive\desktop\game-main\sdl_utility.cpp
+1682529510 source:c:\users\huyho\onedrive\desktop\game-main\sdl_utility.cpp
 	"SDL_utility.h"
 
 1681566057 source:c:\users\huyho\onedrive\desktop\game-main\texture_object.cpp
 	"Texture_object.h"
 
-1681826421 source:c:\users\huyho\onedrive\desktop\game-main\main.cpp
-	"SDL_utility.h"
-	"Texture_object.h"
-	"Game_Map.h"
-	"Character.h"
-	<fstream>
-	<vector>
-	"Enemy.h"
-	"game_utility.h"
+1682545327 source:c:\users\huyho\onedrive\desktop\game-main\main.cpp
+	"koala.h"
 
-1681640403 source:c:\users\huyho\onedrive\desktop\game-main\enemy.cpp
+1682567389 source:c:\users\huyho\onedrive\desktop\game-main\enemy.cpp
 	"Enemy.h"
 
-1681632277 c:\users\huyho\onedrive\desktop\game-main\enemy.h
+1682447421 c:\users\huyho\onedrive\desktop\game-main\enemy.h
 	"Texture_object.h"
 	"Game_Map.h"
 
@@ -106,15 +100,27 @@
 
 1681824521 c:\users\huyho\onedrive\desktop\game-main\game_uitility.h
 
-1681826239 source:c:\users\huyho\onedrive\desktop\game-main\game_utility.cpp
+1682545327 source:c:\users\huyho\onedrive\desktop\game-main\game_utility.cpp
 	"game_utility.h"
 
-1681825250 c:\users\huyho\onedrive\desktop\game-main\game_utility.h
+1682446295 c:\users\huyho\onedrive\desktop\game-main\game_utility.h
 	"Texture_object.h"
 
-1681827916 source:d:\uet\ltnc\game_sdl2\game\game_utility.cpp
+1682446143 c:\users\huyho\onedrive\desktop\game-main\koala.h
+	"SDL_utility.h"
+	"Texture_object.h"
+	"Game_Map.h"
+	"Character.h"
+	<fstream>
+	<vector>
+	"Enemy.h"
+	"star.h"
 	"game_utility.h"
 
-1681827916 d:\uet\ltnc\game_sdl2\game\game_utility.h
+1682483799 source:c:\users\huyho\onedrive\desktop\game-main\star.cpp
+	"star.h"
+
+1682483799 c:\users\huyho\onedrive\desktop\game-main\star.h
 	"Texture_object.h"
+	"Game_Map.h"
 

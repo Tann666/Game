@@ -15,6 +15,10 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &renderer)
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
         logSDLError(cout, "SDL_Init", true);
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+        logSDLError(std::cout, "Mix_OpenAudio", true);
+
     window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED,
                               SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 //window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED,
@@ -35,4 +39,37 @@ void quitSDL(SDL_Window* window, SDL_Renderer* renderer)
     SDL_DestroyWindow(window);
     SDL_Quit();
 }
-
+Mix_Music *loadMusic(const std::string &file)
+{
+    Mix_Music *music = nullptr;
+    music = Mix_LoadMUS(file.c_str());
+    if (music == nullptr)
+    {
+        logSDLError(std::cout, "MIX_LoadMUS", true);
+    }
+    return music;
+}
+void playMusic(Mix_Music *music)
+{
+    if (Mix_PlayingMusic() == 0)
+    {
+        // Play the music
+        Mix_PlayMusic(music, -1);
+    }
+    // If music is being played
+    else
+    {
+        // If the music is paused
+        if (Mix_PausedMusic() == 1)
+        {
+            // Resume the music
+            Mix_ResumeMusic();
+        }
+        // If the music is playing
+        else
+        {
+            // Pause the music
+            Mix_PauseMusic();
+        }
+    }
+}

@@ -9,6 +9,7 @@ Character::Character()
     y_vel = 0;
     frame = 0;
     is_dead = false;
+    is_win = false;
 }
 void Character::load_frame(SDL_Renderer *renderer)
 {
@@ -109,7 +110,7 @@ void Character::control(SDL_Event e)
 void Character::update_control(Game_map *map_)
 {
     mPos_x += x_vel;
-    if ((mPos_x < 0) || (mPos_x + CHAR_SIZE_W > 24 * SIZE_TILE))
+    if ((mPos_x <= 0) || (mPos_x + CHAR_SIZE_W >= 24 * SIZE_TILE))
     {
         if (mPos_x < 0) mPos_x = 0;
         if (mPos_x + CHAR_SIZE_W > 24 * SIZE_TILE) mPos_x = 24 * SIZE_TILE - CHAR_SIZE_W;
@@ -118,7 +119,7 @@ void Character::update_control(Game_map *map_)
     }
     else check_collision_hor(map_);
     mPos_y += y_vel;
-    if ((mPos_y < 0) || (mPos_y + CHAR_SIZE_H > 14 * SIZE_TILE))
+    if ((mPos_y <= 0) || (mPos_y + CHAR_SIZE_H >= 14 * SIZE_TILE))
     {
         if (mPos_y < 0) mPos_y = 0;
         if (mPos_y + CHAR_SIZE_H > 14 * SIZE_TILE) mPos_y = 14 * SIZE_TILE - CHAR_SIZE_H;
@@ -129,7 +130,7 @@ void Character::update_control(Game_map *map_)
 }
 bool Character::valid_collision(const int &index)
 {
-    if (index > 0 && index != 2 && index != 6 && index != 7) return true;
+    if (index > 0 && index != 6 && index != 7) return true;
     return false;
 }
 bool Character::dead_collision_(const int &index)
@@ -150,24 +151,25 @@ void Character::check_collision_hor(Game_map *map_)
     {
         if (valid_collision(map_->MapIndex[top][right]) || valid_collision(map_->MapIndex[bottom][right]))
         {
-            if (dead_collision_(map_->MapIndex[top][right]) || dead_collision_(map_->MapIndex[bottom][right]))
-            {
-                is_dead = true;
-            }
-            mPos_x = right * SIZE_TILE - CHAR_SIZE_W;
-            c_status.right = false;
+                if (dead_collision_(map_->MapIndex[top][right]) || dead_collision_(map_->MapIndex[bottom][right]))
+                {
+                    is_dead = true;
+                }
+
+                mPos_x = right * SIZE_TILE - CHAR_SIZE_W;
+                c_status.right = false;
         }
     }
     else if (x_vel < 0)
     {
         if (valid_collision(map_->MapIndex[top][left]) || valid_collision(map_->MapIndex[bottom][left]))
         {
-            if (dead_collision_(map_->MapIndex[top][left]) || dead_collision_(map_->MapIndex[bottom][left]))
-            {
-                is_dead = true;
-            }
-            mPos_x = (left + 1) * SIZE_TILE;
-            c_status.left = false;
+                if (dead_collision_(map_->MapIndex[top][left]) || dead_collision_(map_->MapIndex[bottom][left]))
+                {
+                    is_dead = true;
+                }
+                mPos_x = (left + 1) * SIZE_TILE;
+                c_status.left = false;
         }
     }
 }
@@ -184,24 +186,24 @@ void Character::check_collision_ver(Game_map *map_)
     {
         if (valid_collision(map_->MapIndex[bottom][left]) || valid_collision(map_->MapIndex[bottom][right]))
         {
-            if (dead_collision_(map_->MapIndex[bottom][left]) || dead_collision_(map_->MapIndex[bottom][right]))
-            {
-                is_dead = true;
-            }
-            mPos_y = bottom * SIZE_TILE - CHAR_SIZE_H;
-            c_status.down = false;
+                if (dead_collision_(map_->MapIndex[bottom][left]) || dead_collision_(map_->MapIndex[bottom][right]))
+                {
+                    is_dead = true;
+                }
+                mPos_y = bottom * SIZE_TILE - CHAR_SIZE_H;
+                c_status.down = false;
         }
     }
     else if (y_vel < 0)
     {
         if (valid_collision(map_->MapIndex[top][left]) || valid_collision(map_->MapIndex[top][right]))
         {
-            if (dead_collision_(map_->MapIndex[top][left]) || dead_collision_(map_->MapIndex[top][right]))
-            {
-                is_dead = true;
-            }
-            mPos_y = (top + 1) * SIZE_TILE;
-            c_status.up = false;
+                if (dead_collision_(map_->MapIndex[top][left]) || dead_collision_(map_->MapIndex[top][right]))
+                {
+                    is_dead = true;
+                }
+                mPos_y = (top + 1) * SIZE_TILE;
+                c_status.up = false;
         }
     }
 }
@@ -232,15 +234,36 @@ void Character::render_frame(SDL_Renderer *renderer)
 }
 void Character::restart(const SDL_Rect &start_rect)
 {
+    is_win = false;
+    is_dead = false;
     mPos_x = start_rect.x;
     mPos_y = start_rect.y;
+    x_vel = 0;
+    y_vel = 0;
+    c_status.right = false;
+    c_status.left = false;
+    c_status.up = false;
+    c_status.down = false;
+    status_before.right = false;
+    status_before.left = false;
+    status_before.up = false;
+    status_before.down = false;
 }
 bool Character::end_level(const SDL_Rect &end_rect)
 {
-    return (mPos_x == end_rect.x && mPos_y == end_rect.y);
+    if (mPos_x == end_rect.x && mPos_y == end_rect.y){
+        x_vel = 0;
+        y_vel = 0;
+        c_status.right = false;
+        c_status.left = false;
+        c_status.up = false;
+        c_status.down = false;
+        return true;
+    }
+    return false;
 }
-void Character::dead_status(){
-    if (is_dead){
+void Character::end_status(){
+    if (is_dead || is_win){
         x_vel = 0;
         y_vel = 0;
         c_status.right = false;

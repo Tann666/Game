@@ -3,6 +3,9 @@
 
 #include "Texture_object.h"
 #include <vector>
+
+#define OBJ_SIZE_W  50
+#define OBJ_SIZE_H  50
 const int SIZE_TILE = 50;
 
 struct Game_map
@@ -12,6 +15,7 @@ struct Game_map
     TextureObject tileset[8];
     vector<SDL_Rect> enemy_pos;
     vector<int> ene_direction;
+    vector<SDL_Rect> star_pos;
     Game_map();
     void load_Map(const string &file);
     void import_TileSet(const string &file, SDL_Renderer *renderer);

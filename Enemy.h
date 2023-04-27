@@ -4,9 +4,6 @@
 #include "Texture_object.h"
 #include "Game_Map.h"
 
-#define ENE_SIZE_W   50
-#define ENE_SIZE_H   50
-
 #define HOR_DIRECTION 1
 #define VER_DIRECTION 2
 
@@ -17,7 +14,6 @@ struct enemy{
     int x_vel, y_vel;
     int direction;
     enemy(SDL_Renderer *renderer);
-    void load_frame(SDL_Renderer *renderer);
     void ene_move(Game_map *map_);
     void stand_still();
     bool valid_collision(const int &index);
